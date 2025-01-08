@@ -6,7 +6,7 @@ import { Component, Renderer2 } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'landsay';
+  title = 'taipan';
 
   constructor(private render : Renderer2){
 
