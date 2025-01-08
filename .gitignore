@@ -1,0 +1,30 @@
+# Angular specific
+/out-tsc/
+/node_modules/
+/.angular/
+
+# Temporary files
+/tmp/
+/coverage/
+
+# Compiled output
+*.log
+*.map
+*.lock
+
+# IDE and Editor files
+.vscode/
+/.idea/
+*.iml
+
+# Environment files
+src/environments/*.local.ts
+src/environments/*.prod.ts
+
+# Dependency files
+package-lock.json
+yarn.lock
+
+# OS-specific files
+.DS_Store
+Thumbs.db
