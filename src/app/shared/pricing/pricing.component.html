@@ -1,0 +1,45 @@
+<!-- START PRICING -->
+<section class="section bg-light" id="price">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center mb-4">
+                    <h3>{{config.subtitle}}</h3>
+                    <p class="text-muted mt-2">{{config.description}}</p>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            <div class="col-md-6 col-lg-4" *ngFor="let item of config.plans">
+                <div class="price-box card border-0 mt-4">
+                    <div class="ribbon" *ngIf="item.discount">{{item.discount}}</div>
+                    <div class="text-center">
+                        <h5 class="mb-0 plan-name-wrap">{{item.name}}</h5>
+                    </div>
+                    <div class="plan-price text-center mt-4">
+                      <h1 class="text-primary mb-0 display-4 fw-medium"><sup>{{item.price.currency}}</sup>{{item.price.value}}<sub
+                        class="text-muted">/{{item.price.sub}}</sub></h1>
+                    </div>
+                    <div class="price-features mt-5">
+                      <ng-container *ngFor="let pD of item.pricingDetails">
+                        <p>
+                          <i class="mdi text-primary" [ngClass]="{'mdi-check': pD.available, 'mdi-close': !pD.available}"></i>
+                          {{pD.value}}
+                        </p>
+                      </ng-container>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="javascript: void(0);" class="btn btn-outline-primary w-100">Join Now</a>
+                    </div>
+                </div>
+                <!--end pricing-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!-- END PRICING -->

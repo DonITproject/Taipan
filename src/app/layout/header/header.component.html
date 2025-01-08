@@ -1,0 +1,74 @@
+
+<!--start page Loader -->
+<div id="preloader">
+    <div id="status">
+        <div class="load">
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+        </div>
+    </div>
+</div>
+<!--end page Loader -->
+
+ <!-- START NAVBAR -->
+ <nav  id="navbar" class="navbar navbar-expand-lg fixed-top sticky" (window:scroll)="windoscroll()">
+    <div class="container" appScrollspy [spiedTags]="['section']" (sectionChange)="onSectionChange($event)">
+        <a class="navbar-brand" href="/"><img [src]="config.logo" alt="" height="50">{{config.title}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" (click)="toggleMenu()" aria-label="Toggle navigation">
+            <i class="mdi mdi-menu text-muted"></i>
+        </button>
+        <div class="collapse navbar-collapse" scrollSpy id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="navbar-navList">
+                <li class="nav-item">
+                    <a [ngxScrollTo]="'#home'" class="nav-link" [ngClass]="{'active':curentsection === 'home'}" href="javascript:void(0);">Головна</a>
+                </li>
+                <li class="nav-item">
+                    <a [ngxScrollTo]="'#gallery'" class="nav-link" [ngClass]="{'active':curentsection === 'gallery'}" href="javascript:void(0);">Галерея</a>
+                </li>
+                <li class="nav-item">
+                    <a [ngxScrollTo]="'#price'" class="nav-link" [ngClass]="{'active':curentsection === 'price'}" href="javascript:void(0);">Наші ціни</a>
+                </li>
+                <li class="nav-item">
+                    <a [ngxScrollTo]="'#trainers'" class="nav-link" [ngClass]="{'active':curentsection === 'trainers'}" href="javascript:void(0);">Тренеры</a>
+                </li>
+                <li dropdown class="nav-item dropdown">
+                    <a class="nav-link" [ngClass]="{'active':curentsection === 'blog'}" id="navbarDropdown" role="button" dropdownToggle aria-expanded="false">
+                        Blog <i class="mdi mdi-chevron-down"></i>
+                    </a>
+                    <ul *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="nav-link" [ngxScrollTo]="'#blog'" [ngClass]="{'active':curentsection === 'blog'}" routerLink="/">Blog</a></li>
+                        <li><a class="nav-link" routerLink="/blog-list" href="javascript:void(0);">Blog List</a></li>
+                        <li><a class="nav-link" routerLink="/blog-details"href="javascript:void(0);">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item " style="align-content: center">
+                    <a [ngxScrollTo]="'#contact'" class="nav-link sign-up-button" [ngClass]="{'active':curentsection === 'contact'}" href="javascript:void(0);">Записатись</a>
+                </li>
+            </ul>
+            <!--end navbar-nav-->
+            <ul class="list-inline mb-0 ps-lg-4 ms-2">
+                <li class="list-inline-item" *ngIf="config.facebookLink">
+                    <a [href]="config.facebookLink" class="primary-link" target="_blank" rel="noopener noreferrer">
+                        <i class="mdi mdi-facebook me-1"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item" *ngIf="config.twitterLink">
+                    <a [href]="config.twitterLink" class="primary-link" target="_blank" rel="noopener noreferrer">
+                        <i class="mdi mdi-twitter me-1"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item" *ngIf="config.instLink">
+                    <a [href]="config.instLink" class="primary-link" target="_blank" rel="noopener noreferrer">
+                        <i class="mdi mdi-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--end collapse-->
+    </div>
+    <!--end container-->
+</nav>
+<!-- END NAVBAR -->

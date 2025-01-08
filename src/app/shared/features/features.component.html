@@ -1,0 +1,40 @@
+ <!-- START FEATURES -->
+ <section class="section" id="features">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center mb-5">
+                    <h3>{{config.title}}</h3>
+                    <p class="text-muted">{{config.description}}</p>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+        <div class="row">
+            <div class="col-lg-4 col-md-6" *ngFor="let item of config.features">
+                <div class="feature-box card border-0 mt-3">
+                    <div class="card-body">
+                        <div class="feature-icon mx-auto">
+                            <i [class]="'mdi ' + item.icon"></i>
+                        </div>
+                        <div class="mt-4">
+                            <h6 class="mb-3 fs-17">{{item.title}}</h6>
+                            <p class="text-muted">{{item.description}}</p>
+                        </div>
+<!--                        <div class="feature-link">-->
+<!--                            <a href="javascript: void(0);" class="text-primary text-decoration-underline">Learn More <i-->
+<!--                                    class="mdi mdi-arrow-right"></i></a>-->
+<!--                        </div>-->
+                    </div>
+                    <!--end card-body-->
+                </div>
+                <!--end feature-box-->
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!-- END FEATURES -->
